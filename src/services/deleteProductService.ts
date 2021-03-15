@@ -14,7 +14,7 @@ class CreateProductService {
       throw Error('id do produto não existe')
     }
 
-    const product = await productRepository.delete(id)
+    await productRepository.delete(id)
     const products = await productRepository.find()
     return products
   }

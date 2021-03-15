@@ -8,6 +8,9 @@ class User {
   @Column()
   name: string
 
+  @Column('int')
+  role: number
+
   @Column('decimal')
   password?: string
 

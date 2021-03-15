@@ -2,8 +2,11 @@ import { Request, Response, Router } from 'express'
 import { getRepository } from 'typeorm'
 import Sku from '../models/skuModel'
 import CreateSkuService from '../services/createSkuService'
-
+import authenticateMiddleware from '../middlewares/Authenticate'
+import adminRoleMiddleware from '../middlewares/AdminRole'
 const usersRouter = Router()
+usersRouter.use(authenticateMiddleware)
+usersRouter.use(adminRoleMiddleware)
 
 usersRouter.post('/', async (request: Request, response: Response) => {
   try {

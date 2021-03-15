@@ -25,9 +25,11 @@ class AuthenticateUserService {
       throw new Error('email ou senha invalido')
     }
     delete user.password
+    const { id, role } = user
+    const informationStrinfy = JSON.stringify({ id, role })
 
     const token = sign({}, authConfig.jwt.secret, {
-      subject: user.id,
+      subject: informationStrinfy,
       expiresIn: authConfig.jwt.expiresIn
     })
     return { user, token }

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import { verify } from 'jsonwebtoken'
+import { verify, decode } from 'jsonwebtoken'
 import authConfig from '../config/auth'
 
 interface IPayload {
@@ -16,15 +16,15 @@ const authenticate = (request: Request, response: Response, next: NextFunction) 
   const [, token] = authHeader.split(' ')
   try {
     const checkTokenDecoded = verify(token, authConfig.jwt.secret)
-
     const { sub } = checkTokenDecoded as IPayload
-
+    const { id, role } = JSON.parse(sub)
     request.user = {
-      id: sub,
+      id: id,
+      role: role
     }
     return next()
-  } catch {
-    throw new Error('JWT token invalido')
+  } catch (err) {
+    response.status(401).json({ error: err.message })
   }
 }
 

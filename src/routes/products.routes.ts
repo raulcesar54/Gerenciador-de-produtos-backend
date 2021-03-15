@@ -4,10 +4,12 @@ import CreateProductService from '../services/createProductService'
 import DeleteProductService from '../services/deleteProductService'
 import { getCustomRepository } from 'typeorm'
 import authenticateMiddleware from '../middlewares/Authenticate'
+import adminRoleMiddleware from '../middlewares/AdminRole'
 
 const productsRouter = Router()
 
 productsRouter.use(authenticateMiddleware)
+productsRouter.use(adminRoleMiddleware)
 
 productsRouter.post('/', async (request: Request, response: Response) => {
   try {
@@ -24,7 +26,6 @@ productsRouter.post('/', async (request: Request, response: Response) => {
 
 productsRouter.get('/', async (request, response) => {
   const productRepository = getCustomRepository(ProductRepository)
-
   const products = await productRepository.find({ relations: ['sku'] })
   return response.json(products)
 })

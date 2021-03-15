@@ -4,9 +4,9 @@ const usersRouter = Router()
 
 usersRouter.post('/', async (request: Request, response: Response) => {
   try {
-    const { name, email, password } = request.body
+    const { name, email, password, role } = request.body
     const createUser = new CreateUserService()
-    const user = await createUser.execute({ name, email, password })
+    const user = await createUser.execute({ name, email, password, role })
     delete user.password
     return response.json(user)
   } catch (err) {

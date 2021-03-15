@@ -36,8 +36,5 @@ export class CreateSku1615710814145 implements MigrationInterface {
   }
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('sku')
-
   }
-
-
 }
