@@ -35,7 +35,8 @@ dados de acesso da base de dados fica no arquivo ormconfig.json
 	"email": "email@user.com.br",
 	"password": "*****",
 	"role":1
-}```
+}
+```
 role : 1 == admin, permisões de listagem e crud
 
 ------------
@@ -51,7 +52,8 @@ role : 1 == admin, permisões de listagem e crud
 {
 	"email": "email@user.com.br",
 	"password": "****"
-}```
+}
+```
 
 ------------
 >/skus
@@ -62,7 +64,8 @@ role : 1 == admin, permisões de listagem e crud
 ```
 {
 	"name": "SKUNAME"
-}```
+}
+```
 sku é utilizado para agrupar produtos, cada sku deve conter produtos com nomes unicos
 
 ``GET`` listagem de sku
@@ -84,7 +87,8 @@ tras a lista de sku, relacionando com os produtos cadastrados e agrupando os por
 	"qty":1,
 	"size":"M",
 	"sku_id":"uuid"
-}```
+}
+```
 grava um produto na tabela de produtos, e relaciona ela com a tabela de sku, pelo sku_id
 
 ``GET`` listagem de produtos
