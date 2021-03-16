@@ -1,13 +1,13 @@
 ### MESTRES DA WEB - BACK END
 
 #### Iniciar projeto
-ao clonar projeto deve-se usar o comando abaixo para instalar as dependencias do projeto.
+ao clonar o projeto, deve-se usar o comando abaixo para instalar as dependencias do projeto e criar as tabelas.
 ```
 $ yarn
 $ yarn typeorm migration:run
 ```
 
-inicia a aplicação na porta **3333**
+com o comando abaixo a aplicação iniciará na porta **3333**
 `$ yarn dev`
 
 dados de acesso da base de dados fica no arquivo ormconfig.json
