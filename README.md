@@ -46,7 +46,7 @@ role : 1 == admin, permisões de listagem e crud
 
 ``POST`` gera token jwt para acessar rotas protegidas.
 
-######body da requisição
+###### body da requisição
 ```
 {
 	"email": "email@user.com.br",
@@ -58,7 +58,7 @@ role : 1 == admin, permisões de listagem e crud
 
 ``POST`` cadastra um novo sku
 
-######body da requisição
+###### body da requisição
 ```
 {
 	"name": "SKUNAME"
@@ -77,7 +77,7 @@ tras a lista de sku, relacionando com os produtos cadastrados e agrupando os por
 
 ``POST`` salva um novo produto na tabela de produtos.
 
-######body da requisição
+###### body da requisição
 ```
 {
 	"name":"produto",
