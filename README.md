@@ -2,7 +2,10 @@
 
 #### Iniciar projeto
 ao clonar projeto deve-se usar o comando abaixo para instalar as dependencias do projeto.
-`$ yarn`
+```
+$ yarn
+$ yarn typeorm migration:run
+```
 
 inicia a aplicação na porta **3333**
 `$ yarn dev`
