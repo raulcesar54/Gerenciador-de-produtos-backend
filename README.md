@@ -23,12 +23,12 @@ dados de acesso da base de dados fica no arquivo ormconfig.json
   }
 }
 ```
-####Rotas da aplicação
+#### Rotas da aplicação
 >/users
 
 ``POST`` cria um usuario para utilizar as demais rotas protegidas.
 
-######body da requisição
+###### body da requisição
 ```
 {
 	"name": "username",
